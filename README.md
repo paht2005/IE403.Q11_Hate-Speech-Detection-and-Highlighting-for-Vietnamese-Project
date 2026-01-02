@@ -266,7 +266,7 @@ We evaluate our proposed **HARE framework (Qwen2.5 fine-tuned with Rationales)**
   - **Flan-T5-base** by **+13.42%**
 - Compared to **Qwen Vanilla**, incorporating **rationale-based semantic alignment** leads to:
   - **+1.26% F1-score**
-  - **+2.47% Precision**, helping reduce false positives.
+  - **+2.47% Precision**, helping reduce false positive.
 - Higher Precision is particularly important in **content moderation**, where incorrectly flagging non-toxic comments can negatively impact user experience.
 
 ---
