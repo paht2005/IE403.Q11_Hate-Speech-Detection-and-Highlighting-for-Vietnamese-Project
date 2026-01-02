@@ -13,6 +13,9 @@
 > The project focuses on **Explainable AI (XAI)** by utilizing **Large Language Models (LLMs)** and **Chain-of-Thought (CoT)** prompting to not only classify hate speech but also extract rationales and implied statements. We leverage the **Qwen2.5-3B** model fine-tuned with **QLoRA** to achieve state-of-the-art performance. 
 
 
+<p align="center">
+  <img src="thumbnail.png" alt="Thumbnaill" width="400">
+</p>
 
 ---
 
@@ -99,6 +102,8 @@ IE403.Q11_Hate-Speech-Detection-and-Highlighting-for-Vietnamese-Project/
 ├── IE403.Q11-Nhom2_slide.pdf            # Presentation slides
 ├── requirements.txt                # Global Python dependencies
 ├── .gitignore                      # Git exclusion rules (Excludes 1.7GB demo folder)
+├── LICENSE
+├── thumbnail.png     
 └── README.md                       # Main project documentation
 
 ```
