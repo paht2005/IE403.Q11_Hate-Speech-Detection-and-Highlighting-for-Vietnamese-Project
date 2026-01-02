@@ -171,7 +171,7 @@ The table below compares HARE (Qwen2.5-7B) with baseline models.
 | HARE (Qwen2.5-7B Fine-tuned) | **0.6304** | **0.5772** | **0.6026** |
 
 
-> **Note:**  The inclusion of rationales and CoT reasoning improved the F1-score by nearly 10% compared to the best traditional transformer baseline.
+> **Key Finding:**  The inclusion of rationales and CoT reasoning improved the F1-score by nearly 10% compared to the best traditional transformer baseline.
 
 
 ---
