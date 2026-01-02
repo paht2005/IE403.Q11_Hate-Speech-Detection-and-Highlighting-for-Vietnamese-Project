@@ -95,10 +95,8 @@ IE403.Q11_Hate-Speech-Detection-and-Highlighting-for-Vietnamese-Project/
 │   ├── backend/                    # FastAPI server code
 │   └── output/                     # Local logs and sample outputs
 │
-├── docs/                           # Documentation and Presentation
-│   ├── IE403_Report.pdf            # Detailed academic report
-│   └── IE403_Slide.pdf             # Presentation slides
-│
+├── IE403.Q11-Nhom2_report.pdf            # Detailed academic report
+├── IE403.Q11-Nhom2_slide.pdf            # Presentation slides
 ├── requirements.txt                # Global Python dependencies
 ├── .gitignore                      # Git exclusion rules (Excludes 1.7GB demo folder)
 └── README.md                       # Main project documentation
