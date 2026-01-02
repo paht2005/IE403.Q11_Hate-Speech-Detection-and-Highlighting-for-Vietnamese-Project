@@ -14,7 +14,7 @@
 
 
 <p align="center">
-  <img src="thumbnail.png" alt="Thumbnaill" width="400">
+  <img src="Thumbnail.png" alt="Thumbnaill" width="400">
 </p>
 
 ---
