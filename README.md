@@ -121,6 +121,24 @@ We compared our HARE framework against:
 - **PhoBERT-base:** Traditional Encoder-only transformer.
 - **Flan-T5-base:** Encoder-Decoder model for text-to-text tasks.
 
+### 4. Demo System Architecture
+
+The HARE demo is a full-stack application designed for real-time hate speech analysis.
+
+#### Frontend (React + Vite)
+- **Component-Based UI**: Organized with modular components like `Sidebar`, `GroupInfo`, and `InputComment`.
+- **YouTube Integration**: Features a `YoutubeComments` component that allows users to fetch and analyze comments directly from YouTube URLs.
+- **Dynamic Highlighting**: Real-time rendering of toxic spans based on the rationale provided by the backend.
+
+#### Backend (FastAPI)
+- **Asynchronous Processing**: Handles LLM inference requests efficiently.
+- **LLM Streaming**: Supports streaming the Rationale generation process for a better user experience.
+- **YouTube API**: Integrated to scrape and process comments on the fly.
+
+#### Tech Stack
+- **Frontend**: React.js, Vite, Tailwind CSS, Lucide React (icons).
+- **Backend**: FastAPI, Uvicorn, Hugging Face Transformers.
+- **Deployment**: Dockerized environment (Dockerfile included).
 ---
 
 ## Installation
@@ -209,24 +227,7 @@ The interactive web demo allows users to:
 3. See **highlighted text spans** that the model identified as toxic.
 4. Read the model's generated **explanation** for its decision.
 
-### Demo System Architecture
 
-The HARE demo is a full-stack application designed for real-time hate speech analysis.
-
-#### Frontend (React + Vite)
-- **Component-Based UI**: Organized with modular components like `Sidebar`, `GroupInfo`, and `InputComment`.
-- **YouTube Integration**: Features a `YoutubeComments` component that allows users to fetch and analyze comments directly from YouTube URLs.
-- **Dynamic Highlighting**: Real-time rendering of toxic spans based on the rationale provided by the backend.
-
-#### Backend (FastAPI)
-- **Asynchronous Processing**: Handles LLM inference requests efficiently.
-- **LLM Streaming**: Supports streaming the Rationale generation process for a better user experience.
-- **YouTube API**: Integrated to scrape and process comments on the fly.
-
-#### Tech Stack
-- **Frontend**: React.js, Vite, Tailwind CSS, Lucide React (icons).
-- **Backend**: FastAPI, Uvicorn, Hugging Face Transformers.
-- **Deployment**: Dockerized environment (Dockerfile included).
 
 ---
 ## Conclusion
