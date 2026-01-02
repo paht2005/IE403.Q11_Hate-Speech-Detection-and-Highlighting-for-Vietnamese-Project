@@ -337,6 +337,15 @@ The interactive web demo allows users to:
 
 The highlighted toxic spans are directly derived from the generated rationales, ensuring alignment between model explanations and visual outputs.
 
+A screenshot of the demo interface is available at:
+
+```text
+live-demo.gif
+```
+<p align="center">
+  <img src="live-demo.gif" alt="Hate Speech Detection and Highlighting for Vietnamese with Rationale Extraction Demo" width="900">
+</p>
+
 ---
 ## Conclusion
 - Successfully built a Vietnamese hate speech detection system with high interpretability.
