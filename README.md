@@ -10,7 +10,7 @@
 
 > This repository contains the full implementation of **HARE**, a framework designed to detect and explain hate speech in Vietnamese social media text. Developed for the course **IE403.Q11 – Social Media Mining** at the University of Information Technology (UIT – VNU-HCM).  
 >  
-> The project focuses on **Explainable AI (XAI)** by utilizing **Large Language Models (LLMs)** and **Chain-of-Thought (CoT)** prompting to not only classify hate speech but also extract rationales and implied statements. We leverage the **Qwen2.5-7B** model fine-tuned with **QLoRA** to achieve state-of-the-art performance. 
+> The project focuses on **Explainable AI (XAI)** by utilizing **Large Language Models (LLMs)** and **Chain-of-Thought (CoT)** prompting to not only classify hate speech but also extract rationales and implied statements. We leverage the **Qwen2.5-3B** model fine-tuned with **QLoRA** to achieve state-of-the-art performance. 
 
 
 
@@ -47,7 +47,7 @@
 - **Hate Speech Classification:** Binary classification (Censored/Uncensored) for Vietnamese social media comments.
 - **Rationale Extraction:** Automatically highlights specific spans of text that trigger the hate speech label.
 - **Implied Statement Inference:** Decodes sarcasm and toxic metaphors into clear, literal statements.
-- **Fine-tuned LLM:** Custom fine-tuning of **Qwen2.5-7B-Instruct** using **QLoRA** on a specialized rationale dataset.
+- **Fine-tuned LLM:** Custom fine-tuning of **Qwen2.5-3B-Instruct** using **QLoRA** on a specialized rationale dataset.
 - **Full-stack Application:**
   - **FastAPI Backend:** Supports streaming responses and real-time inference.
   - **React + Vite Frontend:** Interactive UI for visualizing highlighted toxic spans.
@@ -57,6 +57,7 @@
 ## Dataset
 - **Core Dataset:** ViTHSD (Vietnamese Toxic Hate Speech Dataset).
 - **Rationale Enhancement:** 2,333 samples were enriched with rationales and implied statements using GPT-4o.
+- **Label Structure:** Each comment is annotated in the format `[target]#[level]`, allowing multi-label classification across five targets (Individuals, Groups, Religion, Race/Ethnicity, Politics).
 - **Data splits:**
   - `dataset/raw/`: Original ViTHSD files in `.xlsx` format.
   - `data/processed/dataset_rationale.json`: The final processed dataset used for fine-tuning.
@@ -108,20 +109,25 @@ IE403.Q11_Hate-Speech-Detection-and-Highlighting-for-Vietnamese-Project/
 ## Methodology
 
 ### 1. Fine-tuning Pipeline
-We utilize **QLoRA (Quantized Low-Rank Adaptation)** to fine-tune **Qwen2.5-7B-Instruct** in a 4-bit quantized format, allowing high performance on consumer-grade GPUs.
+We utilize **QLoRA (Quantized Low-Rank Adaptation)** to fine-tune **Qwen2.5-3B-Instruct** in a 4-bit quantized format, allowing high performance on consumer-grade GPUs.
 
 ### 2. Chain-of-Thought (CoT) Prompting
 To improve the model's reasoning, we implemented a multi-stage prompt strategy:
 - **Phase 1 (Rationale):** Identify why the text is toxic.
 - **Phase 2 (Implied Statement):** Translate hidden toxic meanings.
 - **Phase 3 (Labeling):** Final classification based on the extracted evidence.
+### 3. Two-Stage Semantic Alignment Training
 
-### 3. Comparison Models (Baselines)
+- **Stage 1:** Fine-tune Qwen2.5 on ViTHSD labels to learn decision boundaries.
+- **Stage 2:** Continue training with rationale and implied statement data to align semantic reasoning with classification outputs.
+
+This strategy helps the model move beyond surface-level keyword matching and improves its ability to detect implicit hate speech.
+### 4. Comparison Models (Baselines)
 We compared our HARE framework against:
 - **PhoBERT-base:** Traditional Encoder-only transformer.
 - **Flan-T5-base:** Encoder-Decoder model for text-to-text tasks.
 
-### 4. Demo System Architecture
+### 5. Demo System Architecture
 
 The HARE demo is a full-stack application designed for real-time hate speech analysis.
 
@@ -139,6 +145,8 @@ The HARE demo is a full-stack application designed for real-time hate speech ana
 - **Frontend**: React.js, Vite, Tailwind CSS, Lucide React (icons).
 - **Backend**: FastAPI, Uvicorn, Hugging Face Transformers.
 - **Deployment**: Dockerized environment (Dockerfile included).
+
+
 ---
 
 ## Installation
@@ -169,7 +177,7 @@ Due to the model weight size (~1.7GB), the `demo/` folder must be downloaded fro
 
 ## Usage
 ### 0. Important Notes
-- **Notebook Environment (Kaggle):** All training notebooks in `research/notebooks/` were originally developed and executed on **Kaggle** to leverage its GPU resources (P100/T4). If you are running these locally or on Google Colab, ensure you have sufficient VRAM (at least 16GB recommended for Qwen2.5-7B fine-tuning).
+- **Notebook Environment (Kaggle):** All training notebooks in `research/notebooks/` were originally developed and executed on **Kaggle** to leverage its GPU resources (P100/T4). If you are running these locally or on Google Colab, ensure you have sufficient VRAM (at least 16GB recommended for Qwen2.5-3B fine-tuning).
 - **Path Configuration:** Due to the reorganization of this repository for academic submission, the file paths within the `.ipynb` files may not match the current folder structure.
   - **Default Path in Notebooks:** Usually points to `/kaggle/input/...` or the previous local structure.
   - **Required Action:** If you wish to re-train or run inference, please update the `DATA_PATH` or file loading cells to point to: `../../dataset/processed/dataset_rationale.json`
@@ -210,6 +218,8 @@ We evaluate our proposed **HARE framework (Qwen2.5 fine-tuned with Rationales)**
 | Flan-T5-base | 0.4810 | 0.4520 | 0.4684 |
 | Qwen2.5 (Vanilla, Stage 1 only) | 0.6100 | 0.5600 | 0.5900 |
 | **HARE (Qwen2.5 + Rationales, Stage 1 + 2)** | **0.6347** | **0.5735** | **0.6026** |
+
+**Overall**, the results demonstrate that incorporating rationale-based reasoning consistently improves both interpretability and classification robustness, particularly for implicit and politically sensitive hate speech.
 
 **Key observations:**
 
@@ -285,7 +295,7 @@ The interactive web demo allows users to:
 3. See **highlighted text spans** that the model identified as toxic.
 4. Read the model's generated **explanation** for its decision.
 
-
+The highlighted toxic spans are directly derived from the generated rationales, ensuring alignment between model explanations and visual outputs.
 
 ---
 ## Conclusion
