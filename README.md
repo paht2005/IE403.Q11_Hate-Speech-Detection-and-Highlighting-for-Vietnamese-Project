@@ -208,7 +208,7 @@ pip install -r requirements.txt
 
 ### 4. Setup Demo (External Storage)
 Due to the model weight size (~1.7GB), the `demo/` folder must be downloaded from OneDrive:
-- **Link:** https://nklod-my.sharepoint.com/:f:/g/personal/phatxinhchao_nklod_onmicrosoft_com/IgCg8geix62XT5iKJKcokMOIAWpAHfw9HixcFMIfrksGVbc?e=Ln0xcH 
+- **Link:** https://nklod-my.sharepoint.com/:f:/g/personal/phatxinhchao_nklod_onmicrosoft_com/IgAYGfiHj2ZsTpr2aebNbSfrAVG0YJ0LkziTmToc1uIn1oY?e=nnp26c
 - After downloading, extract the folder into the project root.
 
 --- 
