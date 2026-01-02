@@ -134,9 +134,11 @@ For those who wish to examine the core logic without downloading the full 1.7GB 
 - `model.py`: The inference engine. Implements thread-safe model loading and parses CoT outputs into structured labels.
 - `highlight.py`: The "Highlighting" algorithm. Uses **Unicode Normalization (NFC)** to accurately map model rationales back to original text spans.
 - `schemas.py` & `youtube.py`: Pydantic data models for API validation and YouTube Data API v3 wrappers.
+
 **Frontend Structure (`/app-preview/frontend-snippet`)**
 - `index.html`: The main entry point for the React dashboard.
 - Includes modular component logic for real-time span highlighting based on model confidence scores.
+
 **Sample Results (`/app-preview/sample-outputs`)**
   `results_datasetA_qwen_stage2.json`: Contains full test set predictions, showing exactly how the fine-tuned model explains its decisions.
 
