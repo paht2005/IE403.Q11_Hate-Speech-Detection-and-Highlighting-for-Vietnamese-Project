@@ -6,7 +6,7 @@
 
 <h1 align="center"><b>IE403.Q11 - Social Media Mining</b></h1>
 
-# IE403 Course Project: Hate Speech Detection and Highlighting for Vietnamese with Rationale Extraction (HARE)
+# **IE403 Course Project: Hate Speech Detection and Highlighting for Vietnamese with Rationale Extraction (HARE)**
 
 > This repository contains the full implementation of **HARE**, a framework designed to detect and explain hate speech in Vietnamese social media text. Developed for the course **IE403.Q11 – Social Media Mining** at the University of Information Technology (UIT – VNU-HCM).  
 >  
@@ -21,7 +21,7 @@
 
 ---
 
-## Team Information
+## **Team Information**
 | No. | Student ID | Full Name | Role | Github | Email |
 |----:|:----------:|-----------|------|--------|-------|
 | 1 | 23521143 | Nguyen Cong Phat | Leader | [paht2005](https://github.com/paht2005) | 23521143@gm.uit.edu.vn |
@@ -34,7 +34,7 @@
 ---
 
 
-## Table of Contents
+## **Table of Contents**
 - [Features](#features)
 - [Dataset](#dataset)
 - [Repository Structure](#repository-structure)
@@ -49,7 +49,7 @@
 
 ---
 
-## Features
+## **Features**
 - **Hate Speech Classification:** Binary classification (Censored/Uncensored) for Vietnamese social media comments.
 - **Rationale Extraction:** Automatically highlights specific spans of text that trigger the hate speech label.
 - **Implied Statement Inference:** Decodes sarcasm and toxic metaphors into clear, literal statements.
@@ -60,7 +60,7 @@
 
 ---
 
-## Dataset
+## **Dataset**
 - **Core Dataset:** ViTHSD (Vietnamese Toxic Hate Speech Dataset).
 - **Rationale Enhancement:** 2,333 samples were enriched with rationales and implied statements using GPT-4o.
 - **Label Structure:** Each comment is annotated in the format `[target]#[level]`, allowing multi-label classification across five targets (Individuals, Groups, Religion, Race/Ethnicity, Politics).
@@ -70,7 +70,7 @@
 
 ---
 
-## Repository Structure
+## **Repository Structure**
 ```
 IE403.Q11_Hate-Speech-Detection-and-Highlighting-for-Vietnamese-Project/
 ├── dataset/
@@ -128,7 +128,7 @@ IE403.Q11_Hate-Speech-Detection-and-Highlighting-for-Vietnamese-Project/
 ```
 
 ---
-## Application Preview
+## **Application Preview**
 For those who wish to examine the core logic without downloading the full 1.7GB demo package (which includes the quantized model weights), we provide a comprehensive source preview in the `/app-preview` folder:
 
 **Backend Logic (`/app-preview/backend-logic`)**
@@ -146,7 +146,7 @@ For those who wish to examine the core logic without downloading the full 1.7GB 
 
   
 ---
-## Methodology
+## **Methodology**
 
 ### 1. Fine-tuning Pipeline
 We utilize **QLoRA (Quantized Low-Rank Adaptation)** to fine-tune **Qwen2.5-3B-Instruct** in a 4-bit quantized format, allowing high performance on consumer-grade GPUs.
@@ -189,7 +189,7 @@ The HARE demo is a full-stack application designed for real-time hate speech ana
 
 ---
 
-## Installation
+## **Installation**
 
 ### 1. Clone repository
 ```bash
@@ -215,7 +215,7 @@ Due to the model weight size (~1.7GB), the `demo/` folder must be downloaded fro
 
 --- 
 
-## Usage
+## **Usage**
 ### 0. Important Notes
 - **Notebook Environment (Kaggle):** All training notebooks in `research/notebooks/` were originally developed and executed on **Kaggle** to leverage its GPU resources (P100/T4). If you are running these locally or on Google Colab, ensure you have sufficient VRAM (at least 16GB recommended for Qwen2.5-3B fine-tuning).
 - **Path Configuration:** Due to the reorganization of this repository for academic submission, the file paths within the `.ipynb` files may not match the current folder structure.
@@ -244,8 +244,7 @@ npm run dev
 ```
 
 ---
-## Results
-
+## **Results**
 
 
 ### Overall Performance on ViTHSD Test Set
@@ -327,7 +326,7 @@ This example illustrates how **HARE provides both accurate predictions and human
 
 ---
 
-## Demo
+## **Demo**
 
 The interactive web demo allows users to:
 1. Input a Vietnamese social media comment.
@@ -347,13 +346,13 @@ live-demo.gif
 </p>
 
 ---
-## Conclusion
+## **Conclusion**
 - Successfully built a Vietnamese hate speech detection system with high interpretability.
 - Proved that LLMs fine-tuned with rationales significantly outperform traditional BERT-based models.
 - Provided a modular framework for future research in Vietnamese XAI (Explainable AI).
  
 ---
-## License
+## **License**
 This project is for academic use in the course **IE403.Q11 - Social Media Mining** at the University of Information Technology (UIT – VNU-HCM).
 
 This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
