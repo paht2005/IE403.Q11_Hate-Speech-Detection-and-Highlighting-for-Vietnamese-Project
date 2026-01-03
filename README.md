@@ -246,7 +246,7 @@ npm run dev
 ---
 ## Results
 
-## Results
+
 
 ### Overall Performance on ViTHSD Test Set
 
