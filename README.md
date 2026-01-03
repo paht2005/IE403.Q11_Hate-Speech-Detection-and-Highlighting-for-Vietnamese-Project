@@ -77,6 +77,8 @@ IE403.Q11_Hate-Speech-Detection-and-Highlighting-for-Vietnamese-Project/
 │   ├── raw/                        # Original ViTHSD .xlsx files
 │   └── processed/                  # dataset_rationale.json for training
 │
+├── report/                         # all source latex file for reports
+│
 ├── research/
 │   ├── notebooks/                      # Experiments and training steps
 │   │   ├── base-phobert.ipynb          # Baseline 1: Training and evaluating PhoBERT model
