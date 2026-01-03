@@ -246,6 +246,7 @@ npm run dev
 ---
 ## **Results**
 
+> Detailed quantitative results will be reported in the final project report.
 
 ### Overall Performance on ViTHSD Test Set
 
