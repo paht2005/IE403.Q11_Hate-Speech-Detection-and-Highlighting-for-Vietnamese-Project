@@ -573,7 +573,7 @@ training_data = 1221  # filtered rationale tuples
 | No. | Student ID | Full Name | Role | GitHub |
 |---:|:---:|---|---|---|
 | 1 | 23521143 | Phat Nguyen Cong | Leader | [paht2005](https://github.com/paht2005) |
-| 2 | 23520032 | An Truong Hoang Thanh | Member | [Awnpz](https://github.com/awnpvng) |
+| 2 | 23520032 | An Truong Hoang Thanh | Member | [Awnp](https://github.com/awnpvng) |
 | 3 | 23520023 | An Nguyen Xuan | Member | [annx-uit](https://github.com/annx-uit) |
 | 4 | 23520158 | Binh Mai Thai | Member | [maibinhkznk209](https://github.com/maibinhkznk209/) |
 | 5 | 21520255 | Huong Nguyen Le Quynh | Member | [tracycute](https://github.com/tracycute) |
